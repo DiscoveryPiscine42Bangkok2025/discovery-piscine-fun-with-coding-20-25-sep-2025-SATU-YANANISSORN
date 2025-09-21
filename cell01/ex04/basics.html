@@ -9,18 +9,29 @@
             text-align: center;
             color: white;
         }
-
-        img {
-            width: 500px;
-            height: 300px;
-            float: left;
-            margin: 0 auto;
+        .endtext{
+            font-style: italic;
+            font-family: 'Courier New', Courier, monospace;
+            text-align: right;
+            
+            
         }
-        hr {
+        img{
+            width: 500px;
+            height: 300px; 
+            margin-bottom: 10px;
+        }
+        .row{
+            width: 100%;
+        }
+        .col {
+            text-align: center;
+            float:left;
             width: 50%;
-            height: 100px;
-            text-align: left;
-            margin: 30px 0;
+        }
+
+        .underline {
+            margin-top: 40%;
             border-color: black;
             background-color: black;
         }
@@ -29,14 +40,23 @@
 
 <body style="background-color: pink;">
     <h1>&#60scammer online&#62</h1>
-    <a href="https://www.apple.com/th/iphone-17-pro/">
-        <img src="images/highlights_design_endframe__flnga0hibmeu_large.jpg" alt="iphone17">
-    </a>
-    <a href="https://www.apple.com/apple-vision-pro/">
-        <img src="images/AVPCSS_Main_01_Q80.webp" alt="apple vission pro">
-    </a>
-    <hr>
-
+        <div class="row">
+            <div class="col">
+                <img  src="images/highlights_design_endframe__flnga0hibmeu_large.jpg" alt="iphone 17">
+                <a href="https://www.apple.com/th/iphone-17-pro/">
+                     <p>buy iphone 17</p>
+                </a>
+            </div>
+            <div class="col"> 
+                <img src="images/AVPCSS_Main_01_Q80.webp" alt="apple vission pro">
+                <a href="https://www.apple.com/apple-vision-pro/">
+                    <p>buy apple vission pro</p>
+                </a>
+            </div>
+         </div>
+      
+    <hr class="underline">
+    <p class="endtext">&copy syananis 2025</p>
 </body>
 
 </html>
