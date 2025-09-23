@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <style>
+        button {
+                height: 200px;
+                width: 200px;
+                background-color: red;
+                border-radius: 50%;
+            }   
+      body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        height: 100vh;
+      }
+    </style>
+</head>
+<body>
+    <button onclick="biggerFunction()" class="circle" onmouseleave="smallerFunction()"></button>
+    
+   
+</body>
+
+ <script>
+        const ballon = document.querySelector('.circle');
+        const cssObj = window.getComputedStyle(ballon, null);
+        let count = 200; 
+        function biggerFunction(){
+            
+            let bgColor = cssObj.getPropertyValue("background-color");
+            count = count + 10;
+            ballon.style.width = `${count}px`;
+            ballon.style.height = `${count}px`;
+            if(ballon.style.width >= '420px' ){
+                ballon.style.width = `200px`;
+                ballon.style.height = `200px`;
+                count = 200;
+            }
+            if (bgColor == "rgb(255, 0, 0)"){
+                ballon.style.backgroundColor = "rgb(0, 255, 0)";
+            } 
+            else if(bgColor == "rgb(0, 0, 255)"){
+                ballon.style.backgroundColor = "rgb(255, 0, 0)";
+            }
+            else if(bgColor == "rgb(0, 255, 0)"){
+                ballon.style.backgroundColor = "rgb(0, 0, 255)";
+            }
+        }
+
+        function smallerFunction(){
+            count = count - 5;
+            ballon.style.width = `${count}px`;
+            ballon.style.height = `${count}px`;
+        }
+    </script>
+</html>
