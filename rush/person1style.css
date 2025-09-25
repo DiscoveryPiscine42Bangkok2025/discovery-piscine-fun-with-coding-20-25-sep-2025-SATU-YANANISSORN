@@ -26,8 +26,7 @@
     }
 
     .bg img {
-      width: 50vw; /* <-- Always half the screen width */
-      display: block;
+      width: 50vw; /* <-- จัดให้รูปตัวเองอยู่ครึ่งขวา */
       height: 100vh;
       object-fit: cover;
     }
