@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <style>
+      
+    </style>
+</head>
+
+<body>
+    <div>
+        <form style="display: flex; justify-content: center">
+            <input type="text" id="number1" style="float: left;">
+            <input type="text" id="number2">
+        </form>
+    </div>
+    <div style=" display: flex; justify-content: center; margin-top: 30px;">
+        <button id="divide" onclick="choose('divide')">/</button>
+        <button id="multiple" onclick="choose('multiple')">*</button>
+        <button id="additional" onclick="choose('additional')">+</button>
+        <button id="subtraction" onclick="choose('subtraction')">-</button>
+        <button id="modulus" onclick="choose('modulus')">%</button>
+    </div>
+    <button onclick="getValue()" id="result" style="  
+        margin-left: 46.5% ;
+        margin-top: 20px;
+        position: absolute;
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);">
+        Try me!
+    </button>
+</body>
+<script>
+    let current = 0;
+    function choose(name){
+        if (name == "divide") {
+            current = 0;
+        }
+        else if(name == "multiple"){
+            current = 1;
+        } 
+        else if(name == "additional"){
+            current = 2;
+        }
+        else if(name == "subtraction"){
+            current = 3;
+        }
+        else if (name == "modulus"){
+            current = 4;     
+        }
+    }
+    function getValue() {
+        const inputValue1 = $("#number1").val();
+        const inputValue2 = $("#number2").val();
+        if(parseInt(inputValue1) < 0 || parseInt(inputValue2) < 0){
+            console.log("Error :(");
+            alert("Error :(");
+            return;
+        }
+        if (current == 0){
+            if (parseInt(inputValue2) == 0){console.log("It’s over 9000!");alert("It’s over 9000!"); return;}
+            console.log(parseInt(inputValue1) / parseInt(inputValue2));
+            alert(parseInt(inputValue1) / parseInt(inputValue2));
+        }else if(current == 1){
+            console.log(parseInt(inputValue1) * parseInt(inputValue2));
+            alert(parseInt(inputValue1) * parseInt(inputValue2));
+        }else if(current == 2){
+            console.log(parseInt(inputValue1) + parseInt(inputValue2));
+            alert(parseInt(inputValue1) + parseInt(inputValue2));
+        }else if(current == 3){
+            console.log(parseInt(inputValue1) - parseInt(inputValue2));
+            alert(parseInt(inputValue1) - parseInt(inputValue2));
+        }else if(current == 4){
+            console.log(parseInt(inputValue1) % parseInt(inputValue2));
+            alert(parseInt(inputValue1) % parseInt(inputValue2));
+        }
+        
+    }
+</script>
+  <script src="../jQuery/jquery.js" type="text/javascript"></script>
+
+</html>
